@@ -6,7 +6,9 @@ const {
   updateCartById,
   deleteCartById,
 } = require('../controllers').controllerCart;
+const { auth } = require('../middlewares/index');
 
+router.use(auth);
 router.get('/', getAllcarts);
 router.post('/', postCart);
 router.get('/:id', getCartById);
